@@ -1,5 +1,5 @@
-## 🌾 AI-Powered Smart Irrigation System - Weather & API Integration
-# 📌 Project Overview
+# 🌾 AI-Powered Smart Irrigation System - Weather & API Integration
+## 📌 Project Overview
 Farmers consistently overuse or underuse water due to the absence of real-time, data-driven insights, leading to significant water wastage and reduced crop yield. This project is building a full-stack AI platform to solve this.
 
 This specific repository/module covers Milestone 1 (Weeks 1-2): Weather API Integration and Basic AI Decision Making. It fetches real-time weather forecasts and uses the Sarvam AI LLM to provide actionable irrigation advice.
@@ -23,7 +23,7 @@ Libraries: requests, python-dotenv
 ```text
 weather/
 ├── .gitignore               # Prevents sensitive files from being uploaded
-├── .env                     # Stores secret API keys (Not tracked by Git)
+├── .env                     # Stores secret API keys 
 ├── requirements.txt         # Python dependencies
 ├── irrigation_decision.py   # Main script for weather fetching and AI decision
 └── README.md                # Project documentation
@@ -48,7 +48,6 @@ Create a file named .env in the weather folder and add your keys:
 API=your_tomorrow_io_api_key
 SARVAM_API=your_sarvam_api_key
 ```
-(Note: The project is currently set to fetch weather for Bengaluru: Lat 12.9716, Lon 77.5946. You can change this in the code).
 
 4. Run the script
 
