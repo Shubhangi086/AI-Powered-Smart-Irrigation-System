@@ -1,10 +1,10 @@
-# 🌾 AI-Powered Smart Irrigation System - Weather & API Integration
-## 📌 Project Overview
+#  AI-Powered Smart Irrigation System - Weather & API Integration
+##  Project Overview
 Farmers consistently overuse or underuse water due to the absence of real-time, data-driven insights, leading to significant water wastage and reduced crop yield. This project is building a full-stack AI platform to solve this.
 
 This specific repository/module covers Milestone 1 (Weeks 1-2): Weather API Integration and Basic AI Decision Making. It fetches real-time weather forecasts and uses the Sarvam AI LLM to provide actionable irrigation advice.
 
-## 🚀 Current Features
+##  Current Features
 -Live Weather Fetching: Integrates with the Tomorrow.io API to get hourly forecasts (temperature, rain intensity).
 
 -AI Decision Engine: Sends the weather forecast to Sarvam AI (sarvam-105b model), which acts as an agricultural expert to decide if irrigation is needed and for how long.
@@ -13,14 +13,14 @@ This specific repository/module covers Milestone 1 (Weeks 1-2): Weather API Inte
 
 -Modular Code: Code is separated into services (weather_service.py, sarvam_service.py) for better maintainability.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 -Language: Python 3.x
 
 -External APIs: Tomorrow.io (Weather), Sarvam AI (LLM)
 
 -Libraries: requests, python-dotenv
 
-## 📁 Current Repository Structure
+##  Current Repository Structure
 
 ```text
 weather/
@@ -37,7 +37,7 @@ weather/
 └── README.md                  # Project documentation
 ```
 
-## ⚙️ How to Setup and Run
+##  How to Setup and Run
 1. Clone the repository
 
 ```bash
@@ -63,7 +63,7 @@ SARVAM_API_KEY=your_sarvam_api_key
 python -m src.main
 ```
 
-## 🧠 How it Works
+##  How it Works
 
 -The script connects to Tomorrow.io and pulls the next 12-24 hours of weather data.
 
