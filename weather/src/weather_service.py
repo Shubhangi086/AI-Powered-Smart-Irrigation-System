@@ -12,8 +12,7 @@ def get_weather_forecast():
     data = response.json()
     hourly_data = data['timelines']['hourly']
     
-    # Summarize the next 12 hours
-    summary = "Next 12 hours forecast:\n"
+    summary = "Next 12 hours forecast:\n"  #summarize the next 12 hours
     for hour in hourly_data[:12]:
         temp = hour['values']['temperature']
         rain = hour['values']['rainIntensity']
