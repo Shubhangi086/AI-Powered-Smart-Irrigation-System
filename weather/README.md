@@ -5,28 +5,36 @@ Farmers consistently overuse or underuse water due to the absence of real-time, 
 This specific repository/module covers Milestone 1 (Weeks 1-2): Weather API Integration and Basic AI Decision Making. It fetches real-time weather forecasts and uses the Sarvam AI LLM to provide actionable irrigation advice.
 
 ## 🚀 Current Features
-Live Weather Fetching: Integrates with the Tomorrow.io API to get hourly forecasts (temperature, rain intensity).
+-Live Weather Fetching: Integrates with the Tomorrow.io API to get hourly forecasts (temperature, rain intensity).
 
-AI Decision Engine: Sends the weather forecast to Sarvam AI (sarvam-105b model), which acts as an agricultural expert to decide if irrigation is needed and for how long.
+-AI Decision Engine: Sends the weather forecast to Sarvam AI (sarvam-105b model), which acts as an agricultural expert to decide if irrigation is needed and for how long.
 
-Secure Environment: Uses python-dotenv to hide API keys.
+-Secure Environment: Uses python-dotenv to hide API keys.
+
+-Modular Code: Code is separated into services (weather_service.py, sarvam_service.py) for better maintainability.
 
 ## 🛠️ Tech Stack
-Language: Python 3.x
+-Language: Python 3.x
 
-External APIs: Tomorrow.io (Weather), Sarvam AI (LLM)
+-External APIs: Tomorrow.io (Weather), Sarvam AI (LLM)
 
-Libraries: requests, python-dotenv
+-Libraries: requests, python-dotenv
 
 ## 📁 Current Repository Structure
 
 ```text
 weather/
-├── .gitignore               # Prevents sensitive files from being uploaded
-├── .env                     # Stores secret API keys 
-├── requirements.txt         # Python dependencies
-├── irrigation_decision.py   # Main script for weather fetching and AI decision
-└── README.md                # Project documentation
+├── src/
+│   ├── __init__.py            # Makes src a Python package
+│   ├── main.py                # Entry point to run the application
+│   ├── config.py              # Configuration and API key loading
+│   ├── weather_service.py     # Fetches data from Tomorrow.io
+│   └── sarvam_service.py      # Interacts with Sarvam AI
+│ 
+├── .gitignore                 # Prevents sensitive files from being uploaded
+├── .env.example               # Example environment variables
+├── requirements.txt           # Python dependencies
+└── README.md                  # Project documentation
 ```
 
 ## ⚙️ How to Setup and Run
@@ -45,14 +53,14 @@ pip install -r requirements.txt
 3. Set up your Environment Variables
 Create a file named .env in the weather folder and add your keys:
 ```env
-API=your_tomorrow_io_api_key
-SARVAM_API=your_sarvam_api_key
+WEATHER_API_KEY=your_tomorrow_io_api_key
+SARVAM_API_KEY=your_sarvam_api_key
 ```
 
 4. Run the script
 
 ```bash
-python irrigation_decision.py
+python -m src.main
 ```
 
 ## 🧠 How it Works
