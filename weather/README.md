@@ -19,52 +19,45 @@ External APIs: Tomorrow.io (Weather), Sarvam AI (LLM)
 Libraries: requests, python-dotenv
 
 ## 📁 Current Repository Structure
-text
-Copy
-Download
+
+```text
 weather/
 ├── .gitignore               # Prevents sensitive files from being uploaded
 ├── .env                     # Stores secret API keys (Not tracked by Git)
 ├── requirements.txt         # Python dependencies
 ├── irrigation_decision.py   # Main script for weather fetching and AI decision
 └── README.md                # Project documentation
+```
 
 ## ⚙️ How to Setup and Run
 1. Clone the repository
 
-bash
-Copy
-Download
+```bash
 git clone <your-github-repo-link>
 cd weather
-2. Install dependencies
+```
 
-bash
-Copy
-Download
+2. Install dependencies
+```bash
 pip install -r requirements.txt
+```
+
 3. Set up your Environment Variables
 Create a file named .env in the weather folder and add your keys:
-
-env
-Copy
-Download
+```env
 API=your_tomorrow_io_api_key
 SARVAM_API=your_sarvam_api_key
+```
 (Note: The project is currently set to fetch weather for Bengaluru: Lat 12.9716, Lon 77.5946. You can change this in the code).
 
 4. Run the script
 
-bash
-Copy
-Download
+```bash
 python irrigation_decision.py
+```
 
 ## 🧠 How it Works
-The script connects to Tomorrow.io and pulls the next 12-24 hours of weather data.
-
-It creates a summary of the Temperature and Rain Intensity.
-
-It sends this summary to Sarvam AI with a prompt asking: "Should I turn on the irrigation system? If yes, for how long?"
-
-The AI analyzes the rain forecast (e.g., if rain is coming, it says no) and outputs a practical recommendation in the terminal.
+-The script connects to Tomorrow.io and pulls the next 12-24 hours of weather data.
+-It creates a summary of the Temperature and Rain Intensity.
+-It sends this summary to Sarvam AI with a prompt asking: "Should I turn on the irrigation system? If yes, for how long?"
+-The AI analyzes the rain forecast (e.g., if rain is coming, it says no) and outputs a practical recommendation in the terminal.
