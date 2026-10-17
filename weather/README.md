@@ -19,9 +19,6 @@ External APIs: Tomorrow.io (Weather), Sarvam AI (LLM)
 Libraries: requests, python-dotenv
 
 ## 📁 Current Repository Structure
-text
-Copy
-Download
 weather/
 ├── .gitignore               # Prevents sensitive files from being uploaded
 ├── .env                     # Stores secret API keys (Not tracked by Git)
