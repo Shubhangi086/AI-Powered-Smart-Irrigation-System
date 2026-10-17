@@ -143,5 +143,4 @@ if sarvam_response.status_code == 200:
 else:
     print("Failed to get AI response.")
     print(f"Status Code: {sarvam_response.status_code}")
-
     print(f"Error: {sarvam_response.text}")
