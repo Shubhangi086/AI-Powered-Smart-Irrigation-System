@@ -1,38 +1,70 @@
-##  Smart Irrigation Decision System..
+## 🌾 AI-Powered Smart Irrigation System - Weather & API Integration
+# 📌 Project Overview
+Farmers consistently overuse or underuse water due to the absence of real-time, data-driven insights, leading to significant water wastage and reduced crop yield. This project is building a full-stack AI platform to solve this.
 
-An AI-powered irrigation advisor that uses **real-time weather data** and **Sarvam AI** to decide whether crops need watering, saving water, electricity, and protecting crops from overwatering.
+This specific repository/module covers Milestone 1 (Weeks 1-2): Weather API Integration and Basic AI Decision Making. It fetches real-time weather forecasts and uses the Sarvam AI LLM to provide actionable irrigation advice.
 
-## What It Does..
+## 🚀 Current Features
+Live Weather Fetching: Integrates with the Tomorrow.io API to get hourly forecasts (temperature, rain intensity).
 
-1. Fetches real-time weather forecast from **Tomorrow.io**
-2. Summarizes the next 12 hours of temperature and rainfall
-3. Sends the summary to **Sarvam AI** for analysis
-4. Gets a practical decision: *Should irrigation be ON? For how many minutes?*
+AI Decision Engine: Sends the weather forecast to Sarvam AI (sarvam-105b model), which acts as an agricultural expert to decide if irrigation is needed and for how long.
 
-## Tech Stack..
+Secure Environment: Uses python-dotenv to hide API keys.
 
-Tool -> Purpose
+## 🛠️ Tech Stack
+Language: Python 3.x
 
- **Python 3** -> Core programming language 
- **Tomorrow.io API** -> Real-time weather forecast 
- **Sarvam AI API** -> AI-based irrigation decision 
- **python-dotenv** -> Secure API key management
- **requests** -> HTTP API calls 
+External APIs: Tomorrow.io (Weather), Sarvam AI (LLM)
 
+Libraries: requests, python-dotenv
 
-##  Project Flow..
+## 📁 Current Repository Structure
+text
+Copy
+Download
+weather/
+├── .gitignore               # Prevents sensitive files from being uploaded
+├── .env                     # Stores secret API keys (Not tracked by Git)
+├── requirements.txt         # Python dependencies
+├── irrigation_decision.py   # Main script for weather fetching and AI decision
+└── README.md                # Project documentation
 
-Weather API (Tomorrow.io)
-     ↓
-Weather Forecast
-     ↓
-Sarvam AI (Analysis)
-     ↓
-Irrigation Decision
-(ON/OFF + Minutes)
+## ⚙️ How to Setup and Run
+1. Clone the repository
 
+bash
+Copy
+Download
+git clone <your-github-repo-link>
+cd weather
+2. Install dependencies
 
-## How to do..
+bash
+Copy
+Download
+pip install -r requirements.txt
+3. Set up your Environment Variables
+Create a file named .env in the weather folder and add your keys:
 
-1. Open the terminal
-2. Type: python irrigation_decision.py
+env
+Copy
+Download
+API=your_tomorrow_io_api_key
+SARVAM_API=your_sarvam_api_key
+(Note: The project is currently set to fetch weather for Bengaluru: Lat 12.9716, Lon 77.5946. You can change this in the code).
+
+4. Run the script
+
+bash
+Copy
+Download
+python irrigation_decision.py
+
+## 🧠 How it Works
+The script connects to Tomorrow.io and pulls the next 12-24 hours of weather data.
+
+It creates a summary of the Temperature and Rain Intensity.
+
+It sends this summary to Sarvam AI with a prompt asking: "Should I turn on the irrigation system? If yes, for how long?"
+
+The AI analyzes the rain forecast (e.g., if rain is coming, it says no) and outputs a practical recommendation in the terminal.
