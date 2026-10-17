@@ -59,6 +59,9 @@ python irrigation_decision.py
 ## 🧠 How it Works
 
 -The script connects to Tomorrow.io and pulls the next 12-24 hours of weather data.
+
 -It creates a summary of the Temperature and Rain Intensity.
+
 -It sends this summary to Sarvam AI with a prompt asking: "Should I turn on the irrigation system? If yes, for how long?"
+
 -The AI analyzes the rain forecast (e.g., if rain is coming, it says no) and outputs a practical recommendation in the terminal.
