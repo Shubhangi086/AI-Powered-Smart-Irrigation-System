@@ -1,5 +1,5 @@
 import requests
-from config import WEATHER_URL
+from src.config import WEATHER_URL
 
 def get_weather_forecast():
     print("1. Fetching weather data from Tomorrow.io...")

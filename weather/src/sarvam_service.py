@@ -1,8 +1,8 @@
 import requests
-from config import SARVAM_API_KEY, SARVAM_URL
+from src.config import SARVAM_API_KEY, SARVAM_URL
 
 def get_ai_decision(weather_summary):
-    print("2. Weather data collected. Sending to Sarvam AI for analysis...")
+    print("2. Weather data collected. Sending to Sarvam AI for analysis..")
     
     headers = {
         "Authorization": f"Bearer {SARVAM_API_KEY}",

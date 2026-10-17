@@ -1,5 +1,5 @@
-from weather_service import get_weather_forecast
-from sarvam_service import get_ai_decision
+from src.weather_service import get_weather_forecast
+from src.sarvam_service import get_ai_decision
 
 def main():
     # Step 1: Get weather
